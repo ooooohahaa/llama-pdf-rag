@@ -1,0 +1,17 @@
+query,reference_answer,response,faithfulness_score,faithfulness_passing,relevancy_score,relevancy_passing,correctness_score,correctness_passing
+该文件的页码是多少？,该文件的页码是1。,"该文件的页码包括：234, 266, 328, 329, 333。",0.0,False,1.0,True,1.0,False
+文件的路径是什么？,文件的路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,文件的路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,0.0,False,1.0,True,5.0,True
+该文件的页码是多少？,该文件的页码是2。,"该文件的页码包括：234, 266, 328, 329, 333。",0.0,False,1.0,True,1.0,False
+文件的路径是什么？,文件的路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,文件的路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,0.0,False,1.0,True,5.0,True
+该文档的页码是多少？,该文档的页码是3。,"该文档的页码包括：108, 208, 328, 329, 336。",0.0,False,1.0,True,1.0,False
+文件的存储路径是什么？,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,0.0,False,1.0,True,5.0,True
+该文档的页码是多少？,该文档的页码是4。,"该文档的页码包括：108, 208, 328, 329, 336。",0.0,False,1.0,True,1.0,False
+文件的存储路径是什么？,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,0.0,False,1.0,True,5.0,True
+该文档的页码是多少？,该文档的页码是5。,"该文档的页码包括：108, 208, 328, 329, 336。",0.0,False,1.0,True,1.0,False
+文件的存储路径是什么？,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,0.0,False,1.0,True,5.0,True
+该文档的页码是多少？,该文档的页码是6。,"该文档的页码包括：108, 208, 328, 329, 336。",0.0,False,1.0,True,1.0,False
+文件的存储路径是什么？,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,0.0,False,1.0,True,5.0,True
+该文档的页码是多少？,该文档的页码是7。,"该文档的页码包括：108, 208, 328, 329, 336。",0.0,False,1.0,True,1.0,False
+文件的存储路径是什么？,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,0.0,False,1.0,True,5.0,True
+该文档的页码是多少？,该文档的页码是8。,"该文档的页码包括：108, 208, 328, 329, 336。",0.0,False,1.0,True,1.0,False
+文件的存储路径是什么？,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,文件的存储路径是 /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux高性能服务器编程.pdf。,0.0,False,1.0,True,5.0,True

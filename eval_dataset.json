@@ -1,0 +1,244 @@
+{
+    "examples": [
+        {
+            "query": "\u8be5\u6587\u4ef6\u7684\u9875\u7801\u662f\u591a\u5c11\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u8be5\u6587\u4ef6\u7684\u9875\u7801\u662f1\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u6587\u4ef6\u7684\u8def\u5f84\u662f\u4ec0\u4e48\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u6587\u4ef6\u7684\u8def\u5f84\u662f /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux\u9ad8\u6027\u80fd\u670d\u52a1\u5668\u7f16\u7a0b.pdf\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u8be5\u6587\u4ef6\u7684\u9875\u7801\u662f\u591a\u5c11\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u8be5\u6587\u4ef6\u7684\u9875\u7801\u662f2\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u6587\u4ef6\u7684\u8def\u5f84\u662f\u4ec0\u4e48\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u6587\u4ef6\u7684\u8def\u5f84\u662f /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux\u9ad8\u6027\u80fd\u670d\u52a1\u5668\u7f16\u7a0b.pdf\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f\u591a\u5c11\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f3\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f\u4ec0\u4e48\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux\u9ad8\u6027\u80fd\u670d\u52a1\u5668\u7f16\u7a0b.pdf\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f\u591a\u5c11\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f4\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f\u4ec0\u4e48\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux\u9ad8\u6027\u80fd\u670d\u52a1\u5668\u7f16\u7a0b.pdf\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f\u591a\u5c11\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f5\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f\u4ec0\u4e48\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux\u9ad8\u6027\u80fd\u670d\u52a1\u5668\u7f16\u7a0b.pdf\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f\u591a\u5c11\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f6\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f\u4ec0\u4e48\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux\u9ad8\u6027\u80fd\u670d\u52a1\u5668\u7f16\u7a0b.pdf\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f\u591a\u5c11\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f7\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f\u4ec0\u4e48\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux\u9ad8\u6027\u80fd\u670d\u52a1\u5668\u7f16\u7a0b.pdf\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f\u591a\u5c11\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u8be5\u6587\u6863\u7684\u9875\u7801\u662f8\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f\u4ec0\u4e48\uff1f",
+            "query_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                ""
+            ],
+            "reference_answer": "\u6587\u4ef6\u7684\u5b58\u50a8\u8def\u5f84\u662f /home/ashem/agent_work/test_llamaIndex/llama_agent_example/Linux\u9ad8\u6027\u80fd\u670d\u52a1\u5668\u7f16\u7a0b.pdf\u3002",
+            "reference_answer_by": {
+                "model_name": "gpt-4o-mini",
+                "type": "ai"
+            }
+        }
+    ]
+}
