@@ -42,10 +42,21 @@ def _safe_mean(values) -> float:
     return mean(valid)
 
 
-def _build_question_gen_query(language: str) -> str:
+def _build_question_gen_query(language: str, num_questions: int) -> str:
     if language.startswith("zh"):
-        return "请仅基于给定内容生成问题，问题必须使用中文，避免超出原文信息。"
-    return "Generate questions strictly based on the provided context."
+        return (
+            f"你是一个考试出题专家。请根据提供的文档内容，设计 {num_questions} 个测试问题。\n"
+            "要求：\n"
+            "1. 问题必须完全基于给定上下文中的业务和技术知识。\n"
+            "2. 绝对不要针对文档的元数据（如文件名、文件路径、页码等）进行提问。\n"
+            "3. 提出的问题必须使用中文。"
+        )
+    return (
+        f"You are a Teacher/Professor. Your task is to setup {num_questions} questions for an upcoming quiz/examination. "
+        "The questions should be diverse in nature across the document. "
+        "Restrict the questions to the context information provided. "
+        "Do NOT ask questions about document metadata such as file paths, file names, or page numbers."
+    )
 
 
 def build_eval_dataset(config: AppConfig) -> LabelledRagDataset:
@@ -60,7 +71,10 @@ def build_eval_dataset(config: AppConfig) -> LabelledRagDataset:
         selected_nodes,
         llm=Settings.llm,
         num_questions_per_chunk=config.eval_questions_per_chunk,
-        question_gen_query=_build_question_gen_query(config.eval_question_language),
+        question_gen_query=_build_question_gen_query(
+            config.eval_question_language, 
+            config.eval_questions_per_chunk
+        ),
         show_progress=True,
     )
     dataset = generator.generate_dataset_from_nodes()
