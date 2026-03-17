@@ -70,14 +70,26 @@ class AppConfig:
 
 
 def build_llm(config: AppConfig) -> OpenAI:
-    llm_kwargs = {"model": config.llm_model, "api_key": config.llm_api_key}
+    llm_kwargs = {
+        "model": config.llm_model, 
+        "api_key": config.llm_api_key,
+        "max_retries": 5,
+        "timeout": 60.0,
+        "reuse_client": False
+    }
     if config.llm_api_base:
         llm_kwargs["api_base"] = config.llm_api_base
     return OpenAI(**llm_kwargs)
 
 
 def build_embed_model(config: AppConfig) -> OpenAIEmbedding:
-    embed_kwargs = {"model": config.embed_model, "api_key": config.embed_api_key}
+    embed_kwargs = {
+        "model": config.embed_model, 
+        "api_key": config.embed_api_key,
+        "max_retries": 5,
+        "timeout": 60.0,
+        "reuse_client": False
+    }
     if config.embed_api_base:
         embed_kwargs["api_base"] = config.embed_api_base
     return OpenAIEmbedding(**embed_kwargs)

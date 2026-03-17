@@ -1,5 +1,5 @@
 Evaluation Summary
-Rows: 100
-Avg Faithfulness: 0.9900
+Rows: 16
+Avg Faithfulness: 1.0000
 Avg Relevancy: 1.0000
-Avg Correctness: 4.3800
+Avg Correctness: 4.3750

@@ -1,9 +1,12 @@
+import asyncio
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from statistics import mean
 import matplotlib.pyplot as plt
 import pandas as pd
 from llama_index.core import Settings
+from llama_index.core.async_utils import asyncio_run
 from llama_index.core.evaluation import CorrectnessEvaluator, FaithfulnessEvaluator, RelevancyEvaluator
 from llama_index.core.llama_dataset.generator import RagDatasetGenerator
 from llama_index.core.llama_dataset.rag import LabelledRagDataset
@@ -40,6 +43,16 @@ def _safe_mean(values) -> float:
     if not valid:
         return 0.0
     return mean(valid)
+
+
+def _eval_concurrency() -> int:
+    raw_value = os.getenv("EVAL_CONCURRENCY", "3").strip()
+    if not raw_value:
+        return 3
+    try:
+        return max(1, int(raw_value))
+    except ValueError:
+        return 3
 
 
 def _build_question_gen_query(language: str, num_questions: int) -> str:
@@ -99,24 +112,22 @@ def run_eval(config: AppConfig, dataset: LabelledRagDataset) -> tuple[pd.DataFra
     faithfulness_evaluator = FaithfulnessEvaluator(llm=Settings.llm)
     relevancy_evaluator = RelevancyEvaluator(llm=Settings.llm)
     correctness_evaluator = CorrectnessEvaluator(llm=Settings.llm)
-    records: list[dict] = []
-    for example in dataset.examples:
+    concurrency = min(_eval_concurrency(), max(1, len(dataset.examples)))
+
+    def evaluate_one(example) -> dict:
         source_nodes = retriever.retrieve(example.query)
         if not source_nodes:
-            records.append(
-                {
-                    "query": example.query,
-                    "reference_answer": example.reference_answer,
-                    "response": "RETRIEVAL_FAILED",
-                    "faithfulness_score": None,
-                    "faithfulness_passing": False,
-                    "relevancy_score": None,
-                    "relevancy_passing": False,
-                    "correctness_score": None,
-                    "correctness_passing": False,
-                }
-            )
-            continue
+            return {
+                "query": example.query,
+                "reference_answer": example.reference_answer,
+                "response": "RETRIEVAL_FAILED",
+                "faithfulness_score": None,
+                "faithfulness_passing": False,
+                "relevancy_score": None,
+                "relevancy_passing": False,
+                "correctness_score": None,
+                "correctness_passing": False,
+            }
         response = query_engine.query(example.query)
         faith = faithfulness_evaluator.evaluate_response(query=example.query, response=response)
         rel = relevancy_evaluator.evaluate_response(query=example.query, response=response)
@@ -125,19 +136,28 @@ def run_eval(config: AppConfig, dataset: LabelledRagDataset) -> tuple[pd.DataFra
             response=str(response),
             reference=example.reference_answer,
         )
-        records.append(
-            {
-                "query": example.query,
-                "reference_answer": example.reference_answer,
-                "response": str(response),
-                "faithfulness_score": faith.score,
-                "faithfulness_passing": faith.passing,
-                "relevancy_score": rel.score,
-                "relevancy_passing": rel.passing,
-                "correctness_score": corr.score,
-                "correctness_passing": corr.passing,
-            }
-        )
+        return {
+            "query": example.query,
+            "reference_answer": example.reference_answer,
+            "response": str(response),
+            "faithfulness_score": faith.score,
+            "faithfulness_passing": faith.passing,
+            "relevancy_score": rel.score,
+            "relevancy_passing": rel.passing,
+            "correctness_score": corr.score,
+            "correctness_passing": corr.passing,
+        }
+
+    async def evaluate_one_async(example, semaphore: asyncio.Semaphore) -> dict:
+        async with semaphore:
+            return await asyncio.to_thread(evaluate_one, example)
+
+    async def run_all() -> list[dict]:
+        semaphore = asyncio.Semaphore(concurrency)
+        tasks = [evaluate_one_async(example, semaphore) for example in dataset.examples]
+        return await asyncio.gather(*tasks)
+
+    records = asyncio_run(run_all())
     if not records:
         raise RuntimeError("evaluation dataset is empty")
     df = pd.DataFrame(records)
