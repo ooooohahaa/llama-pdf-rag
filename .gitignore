@@ -8,3 +8,13 @@ wheels/
 
 # Virtual environments
 .venv
+.env
+.env.local
+
+# Project specific
+storage/
+eval_outputs/
+*.pdf
+.DS_Store
+.idea/
+.vscode/
